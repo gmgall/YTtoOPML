@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>YouTube to OPML</title>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="http://scripting.com/code/opmlpackage/client/opml.js"></script>
+  </head>
+
+  <body>
+    <form id="form" name="uploadForm">
+      <div>
+        <input id="csvFile" type="file"/>
+      </div>
+      <div><input type="submit" value="Send file" /></div>
+      <div>
+        <textarea style="white-space: pre" id="result" spellcheck="false" cols=150 rows=50 readonly>Carregue um CSV e clique em "Enviar"</textarea>
+      </div>
+    </form>
+
+    <script>
+      const csvFile = document.getElementById('csvFile')
+      const form = document.getElementById('form')
+      const result = document.getElementById('result')
+
+      form.addEventListener('submit', async function (e) {
+        const opmlObj = {
+          opml: {
+            head: {
+              title: 'YouTube Feeds'
+            },
+            body: {
+              subs: [
+                {
+                  text: 'YouTube Feeds',
+                  title: 'YouTube Feeds',
+                  subs: []
+                }
+              ]
+            }
+          }
+        }
+
+        e.preventDefault()
+        const text = await csvFile.files[0].text()
+        const parsedCsv = d3.csvParse(text)
+
+        for (const channel of parsedCsv) {
+          if (channel["Channel ID"] === '') break
+
+          opmlObj.opml.body.subs[0].subs.push({
+            type: "rss",
+            text: channel["Channel title"],
+            title: channel["Channel title"],
+            xmlURL: `https://www.youtube.com/feeds/videos.xml?channel_id=${channel["Channel ID"]}`,
+            htmlUrl: channel["Channel URL"]
+          })
+
+          console.log(channel["Channel ID"])
+        }
+        console.log(opml.stringify(opmlObj, 3))
+        result.value = opml.stringify(opmlObj)
+      })
+    </script>
+  </body>
+</html>
+
