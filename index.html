@@ -2,7 +2,10 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>YouTube to OPML</title>
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+    <link rel="stylesheet" href="custom.css">
     <script src="code.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
     <script src="http://scripting.com/code/opmlpackage/client/opml.js"></script>
@@ -12,11 +15,13 @@
     <form id="form" name="uploadForm">
       <div>
         <input id="csvFile" type="file"/>
+        <div style="float: right;">
+          <input type="submit" value="Send file" />
+          <input type="button" value="Download" onclick=downloadOPML(result.value,'youtube_feeds.opml') />
+        </div>
       </div>
-      <div><input type="submit" value="Send file" /></div>
-      <button onclick=downloadOPML(result.value,'youtube_feeds.opml')>Download</button>
       <div>
-        <textarea style="white-space: pre; tab-size: 3" id="result" spellcheck="false" cols=150 rows=50 readonly>Carregue um CSV e clique em "Enviar"</textarea>
+        <textarea id="result" spellcheck="false" cols=150 readonly>Carregue um CSV e clique em "Enviar"</textarea>
       </div>
     </form>
 

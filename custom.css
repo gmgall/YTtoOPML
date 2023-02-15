@@ -1,0 +1,11 @@
+textarea {
+  font-family: var(--mono-font);
+  font-size: 1rem;
+  white-space: pre;
+  tab-size: 3;
+}
+
+hr {
+  border: solid;
+  width: 75%;
+}
