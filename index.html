@@ -27,7 +27,9 @@
         const opmlObj = {
           opml: {
             head: {
-              title: 'YouTube Feeds'
+              title: 'YouTube Feeds',
+              docs: 'http://opml.org/spec2.opml',
+              dateCreated: (new Date()).toUTCString()
             },
             body: {
               subs: [
