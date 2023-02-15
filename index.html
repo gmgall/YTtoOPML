@@ -12,6 +12,11 @@
   </head>
 
   <body>
+    <h1>YT to OPML</h1>
+    <p><b>O que é isso? </b>• Esse site converte um arquivo <a target="_blank" href="https://pt.wikipedia.org/wiki/Comma-separated_values">CSV</a> com suas inscrições no YouTube em um arquivo <a target="_blank" href="http://opml.org/">OPML</a>, que pode ser importado na maioria dos agregadores <a target="_blank" href="https://www.rssboard.org/rss-specification#whatIsRss">RSS</a>.</p>
+    <p><b>Onde encontro esse CSV? </b>• O <a target="_blank" href="https://en.wikipedia.org/wiki/Google_Takeout">Google Takeout</a> é uma forma de fazer download de todos os registros que <a target="_blank" href="https://ciberduvidas.iscte-iul.pt/consultorio/perguntas/a-google-ou-o-google/34112">a</a> Google possui de um usuário. <a target="_blank" href="https://takeout.google.com/">Solicite o seu</a>, sem esquecer de marcar que quer as informações do YouTube. No arquivo resultante (um <code>.zip</code> ou <code>.tgz</code>), procure por um CSV com suas inscrições. Em fev/2023 ele fica em <code>Takeout/YouTube and YouTube Music/subscriptions/subscriptions.csv</code></p>
+    <p><b>Esse site guarda alguma informação minha? </b>• Não.</p>
+    <hr>
     <form id="form" name="uploadForm">
       <div>
         <input id="csvFile" type="file"/>
@@ -24,6 +29,11 @@
         <textarea id="result" spellcheck="false" cols=150 readonly>Carregue um CSV e clique em "Enviar"</textarea>
       </div>
     </form>
+
+    <footer>
+      <p>Feito com <a target="_blank" href="https://thewebisfucked.com/">😤</a> por <a target="_blank" href="https://gmgall.net">Guilherme Magalhães Gall</a>.</p>
+      <p>Encontrou algum <em>bug</em>? Por favor, entre em <a target="_blank" href="https://gmgall.net/contact">contato</a>, abra uma <a target="_blank" href="https://github.com/gmgall/YTtoOPML/issues">issue</a> ou envie um <a target="_blank" href="https://github.com/gmgall/YTtoOPML/pulls">Pull Request</a>.</p>
+    </footer>
 
     <script>
       const csvFile = document.getElementById('csvFile')
