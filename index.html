@@ -57,11 +57,15 @@
             htmlUrl: channel["Channel URL"],
             version: 'RSS2'
           })
-
-          console.log(channel["Channel ID"])
         }
-        console.log(opml.stringify(opmlObj))
-        result.value = opml.stringify(opmlObj)
+        /*
+        Não é bonito forçar a codificação, mas o CSV do Google vem em UTF-8.
+        O próprio autor do opmlPackage admite esse uso em algumas situações.
+        Não encontrei nada no padrão que forçasse uma codificação específica.
+        
+        Ver https://github.com/scripting/opmlPackage/issues/6
+        */
+        result.value = opml.stringify(opmlObj).replace("ISO-8859-1", "UTF-8")
       })
     </script>
   </body>
