@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <title>YouTube to OPML</title>
+    <script src="code.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
     <script src="http://scripting.com/code/opmlpackage/client/opml.js"></script>
   </head>
@@ -13,6 +14,7 @@
         <input id="csvFile" type="file"/>
       </div>
       <div><input type="submit" value="Send file" /></div>
+      <button onclick=downloadOPML(result.value,'youtube_feeds.opml')>Download</button>
       <div>
         <textarea style="white-space: pre; tab-size: 3" id="result" spellcheck="false" cols=150 rows=50 readonly>Carregue um CSV e clique em "Enviar"</textarea>
       </div>
