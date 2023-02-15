@@ -35,7 +35,6 @@
               subs: [
                 {
                   text: 'YouTube Feeds',
-                  title: 'YouTube Feeds',
                   subs: []
                 }
               ]
@@ -55,7 +54,8 @@
             text: channel["Channel title"],
             title: channel["Channel title"],
             xmlUrl: `https://www.youtube.com/feeds/videos.xml?channel_id=${channel["Channel ID"]}`,
-            htmlUrl: channel["Channel URL"]
+            htmlUrl: channel["Channel URL"],
+            version: 'RSS2'
           })
 
           console.log(channel["Channel ID"])
