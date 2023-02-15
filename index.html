@@ -9,6 +9,8 @@
     <script src="code.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
     <script src="opml.js"></script>
+    <!-- icons by https://icons8.com -->
+    <link rel="icon" href="favicon.gif" type="image/gif" />
   </head>
 
   <body>
@@ -21,12 +23,12 @@
       <div>
         <input id="csvFile" type="file"/>
         <div style="float: right;">
-          <input type="submit" value="Send file" />
+          <input type="submit" value="Gerar OPML" />
           <input type="button" value="Download" onclick=downloadOPML(result.value,'youtube_feeds.opml') />
         </div>
       </div>
       <div>
-        <textarea id="result" spellcheck="false" cols=150 readonly>Carregue um CSV e clique em "Enviar"</textarea>
+        <textarea id="result" spellcheck="false" cols=150 readonly>Carregue um CSV e clique em "Gerar OPML"</textarea>
       </div>
     </form>
 
