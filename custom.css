@@ -9,3 +9,16 @@ hr {
   border: solid;
   width: 75%;
 }
+
+input[type=file] {
+	border-width: 1px;
+	border-style: dotted;
+}
+
+input::file-selector-button {
+	font-weight: bold;
+	color: dodgerblue;
+	padding: 0.5em;
+	border: thin solid grey;
+	border-radius: 3px;
+}
