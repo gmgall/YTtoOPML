@@ -28,7 +28,7 @@
     <hr>
     <form id="form" name="uploadForm">
       <div>
-        <input id="csvFile" type="file"/>
+        <input id="csvFile" type="file" accept=".csv, application/csv" />
         <div style="float: right;">
           <input type="submit" value="Gerar OPML" />
           <input type="button" value="Download" onclick=downloadOPML(result.value,'youtube_feeds.opml') />
