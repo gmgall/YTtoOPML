@@ -1,4 +1,4 @@
-![YT to OPML](yt2opml.png)
+![YT to OPML](images/yt2opml.png)
 
 # YouTube to OPML
 
